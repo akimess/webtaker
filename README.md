@@ -115,3 +115,13 @@ If the need arises, you will be able to change the viewport of the browser that 
 ![alt text](https://raw.githubusercontent.com/akimess/webtaker/master/images/generated.png "Generate/Retrieved")
 
 #### P.S. After the images are generated, save the session ID to retrieve them later.
+
+
+### Million screenshots per day challenge:
+To tackle this I used rabbitmq and redis. Redis will be used to retrieve screenshots each time the user requests for them later and rabbitmq is to spread screenshotting request between workers. As I stated above, docker allows to scale the number of screenshot service workers.    
+
+Million screenshots per day is almost 12 screenshots made per second. This doesn't mean that there will be 12 requests per second as user is able to send several screenshots. However, this project currently accepts unlimited amount of URLs sent to the service. There are several ways of scalling this and it depends on the number of screenshot_service workers and the limit for the number of screenshots per request.    
+
+As the screenshot generation takes somewhere near a second, I suggest setting the limit to 10 screenshots per request and scaling up to 10 or 11 workers. 11 being the safest bet.   
+
+Problems will arise when there will be a need to slow down the screenshot generation to correctly snapshot websites that take time to fully finish loading. To tackle this, the workers will need to be scaled up to around 20, but it highly depends on the websites being fed to the service, which will need some monitoring (addition of loggers will help).
