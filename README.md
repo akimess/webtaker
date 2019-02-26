@@ -124,4 +124,4 @@ Million screenshots per day is almost 12 screenshots made per second. This doesn
 
 As the screenshot generation takes somewhere near a second, I suggest setting the limit to 10 screenshots per request and scaling up to 10 or 11 workers. 11 being the safest bet.   
 
-Problems will arise when there will be a need to slow down the screenshot generation to correctly snapshot websites that take time to fully finish loading. To tackle this, the workers will need to be scaled up to around 20, but it highly depends on the websites being fed to the service, which will need some monitoring (addition of loggers will help).
+However, this is for a load where the requests will be happening averagely throughout 24 hours. There will be times throughout the day where the requests will peak and sometimes where no requests will even come through. For this, I suggest somewhere near 20 workers. But because it is highly variable and there is no need to always keep 20 workers, it is possible to use the features of Docker Swarm and use dynamic scalling depending on the unacknowledged messages in the queue. [Example of this](https://github.com/sprungknoedl/kogia)
