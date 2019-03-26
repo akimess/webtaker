@@ -34,7 +34,7 @@ Used to send tasks to the service backend.
 Used for caching requests. Specifically request for retrieving earlier made screenshots. This will allow to ease the load on the requests.
 
 **AWS S3:**   
-I saw that Detectify stack uses AWS S3 and decided to use it also to store screenshots. The images are stored with session ID prefix, which allows to easily retrieve them afterwards. You will need to add your credentials to the config.json file stated above.    
+I decided to use it to store screenshots. The images are stored with session ID prefix, which allows to easily retrieve them afterwards. You will need to add your credentials to the config.json file stated above.    
 
 ### Puppeteer:   
 The library used to take screenshots with DevTools Protocol. When docker is building, it will download the chrome driver for the library to work, which will take a few seconds depending on your connection.   
