@@ -1,0 +1,22 @@
+{
+  "name": "webtaker",
+  "version": "1.0.0",
+  "description": "Screenshot Web Taker",
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^4.2.3"
+  },
+  "scripts": {
+    "test": "cd frontend && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akimess/webtaker.git"
+  },
+  "author": "Akim Essen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akimess/webtaker/issues"
+  },
+  "homepage": "https://github.com/akimess/webtaker#readme"
+}
