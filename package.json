@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/akimess/webtaker/issues"
   },
-  "homepage": "https://github.com/akimess/webtaker#readme"
+  "homepage": "https://github.com/akimess/webtaker#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  }
 }
