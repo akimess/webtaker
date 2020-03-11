@@ -3,7 +3,7 @@ const {createUrls, isURL} = require('./functions');
 const sendTask = require('./publisher');
 const aws = require('aws-sdk');
 
-//Amazon S3 Storage credentials init
+//AWS Storage credentials init
 aws.config.update({
     secretAccessKey: process.env.AWS_SECRET_ACESS_KEY,
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
